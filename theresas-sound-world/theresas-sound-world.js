@@ -3,8 +3,15 @@
 * Audio effects library
 * Copyright 2012 Stuart Memo
 *****************************/
-
-(function (window, undefined) {
+(function(factory) {
+    if (typeof define === 'function' && define.amd) {
+        define([], factory);
+    } else if (typeof module !== 'undefined' && module.exports) {
+        module.exports = factory();
+    } else {
+        window.SoundWorld = factory();
+    }
+})(function () {
 
     var SoundWorld = (function () {
 
@@ -548,6 +555,6 @@
         };
     })();
 
-    window.SoundWorld = SoundWorld;
+    return SoundWorld;
 
-})(window);
+});
