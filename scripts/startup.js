@@ -15,7 +15,7 @@ define(['./theremin', './leap'], function( theremin, leap ) {
 				pitchHand = frame.hands[0];
 			}
 			
-			var volume = Math.min( volumeHand.palmPosition[1] / 400, 1 );
+			var volume = 1 - Math.min( volumeHand.palmPosition[1] / 400, 1 );
 			var pitch = pitchHand.palmPosition[1] / 6;
 			theremin.play( pitch );
 			theremin.setVolume( volume );
